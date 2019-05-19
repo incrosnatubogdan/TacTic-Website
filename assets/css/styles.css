@@ -1,0 +1,11 @@
+html,
+body {
+    -webkit-text-size-adjust: none;
+    touch-action: manipulation;
+    background: white;
+    overflow-x: hidden;
+}
+
+h1.verified {
+    color: grey;
+}
