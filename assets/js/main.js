@@ -68,6 +68,18 @@ $(document).ready(function () {
         }
     });
 
+    var servicesArray = ["design", "web development" , "marketing"];
+    var i = 2;
+
+    jQuery(document).on("click", '.services_switcher img', function (event) {
+        $("#left_text").text(servicesArray[i]).fadeIn();
+        i++;
+        if (i >= 3) {
+            i = 0;
+        }
+        $("#right_text").text(servicesArray[i]).fadeIn();
+    });
+
 
     jQuery(document).on("click", '.round input[type="checkbox"]', function (event) {
         $(".final_price").removeClass("hidden");
