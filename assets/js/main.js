@@ -2,6 +2,46 @@ function test() {
     console.log(123)
 }
 
+jQuery.fn.scrollCenter = function (elem, speed) {
+    var active = jQuery(this).find(elem);
+    var activeWidth = active.width() / 2;
+    var pos = active.position().left + activeWidth;
+    var elpos = jQuery(this).scrollLeft();
+    var elW = jQuery(this).width();
+    pos = pos + elpos - elW / 2;
+
+    jQuery(this).animate({
+        scrollLeft: pos
+    }, speed == undefined ? 1000 : speed);
+    return this;
+};
+
+jQuery.fn.scrollCenterORI = function (elem, speed) {
+    jQuery(this).animate({
+        scrollLeft: jQuery(this).scrollLeft() - jQuery(this).offset().left + jQuery(elem).offset().left
+    }, speed == undefined ? 1000 : speed);
+    return this;
+};
+
+function bodyAnimation() {
+    $("body").addClass("animating");
+    $("body").addClass("slide-in-right");
+    if ($("body").hasClass("dark_theme_bg")) {
+        $("body").addClass("light_theme_bg");
+        $("body").removeClass("dark_theme_bg");
+        $(".switch_img").attr("src","assets/img/toggle/dark_theme.svg");
+    } else {
+        $("body").addClass("dark_theme_bg");
+        $("body").removeClass("light_theme_bg");
+        $(".switch_img").attr("src","assets/img/toggle/white_theme.svg")
+    }
+    setTimeout(function (event) {
+        $("body").removeClass("animating");
+        $("body").removeClass("slide-in-right");
+    }, 1000);
+    
+}
+
 $(document).ready(function () {
     jQuery(document).on("click", 'h1', function (event) {
         try {
@@ -10,8 +50,26 @@ $(document).ready(function () {
             alert(err.message);
         }
     });
+    jQuery(document).on("click", '#mytoggle', function (event) {
+        if ($(this).is(":checked")) {
+            // $(this).addClass("checked")
+            
+            $(".dark_theme_c").each(function () {
+                $(this).addClass("light_theme_c");
+                $(this).removeClass("dark_theme_c");
+            });
+            bodyAnimation();
+        } else {
+            $(".light_theme_c").each(function () {
+                $(this).addClass("dark_theme_c");
+                $(this).removeClass("light_theme_c");
+            });
+            bodyAnimation();
+        }
+    });
 
-    jQuery(document).on("click", 'input[type="checkbox"]', function (event) {
+
+    jQuery(document).on("click", '.round input[type="checkbox"]', function (event) {
         $(".final_price").removeClass("hidden");
         var category = $(this).parent().attr('class').split(' ')[1];
         $(".final_price").addClass(category);
