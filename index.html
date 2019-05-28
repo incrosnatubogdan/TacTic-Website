@@ -1,20 +1,253 @@
 <head>
-    <title>Tac-Tic Website</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
-    <meta name="HandheldFriendly" content="true">
-    <link rel="stylesheet" href="assets/css/styles.css?v=2.2" />
+  <title>Tac-Tic Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <meta name="HandheldFriendly" content="true">
+  <link rel="stylesheet" href="assets/css/styles.css?v=2.2" />
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/main.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <style>
+    .pre_loader {
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      left: 0;
+      right: 0;
+      z-index: 1000
+    }
+
+    .lds-roller {
+      display: inline-block;
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .lds-roller div {
+      animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      transform-origin: 32px 32px;
+    }
+
+    .lds-roller div:after {
+      content: " ";
+      display: block;
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: black;
+      margin: -3px 0 0 -3px;
+    }
+
+    .lds-roller div:nth-child(1) {
+      animation-delay: -0.036s;
+    }
+
+    .lds-roller div:nth-child(1):after {
+      top: 50px;
+      left: 50px;
+    }
+
+    .lds-roller div:nth-child(2) {
+      animation-delay: -0.072s;
+    }
+
+    .lds-roller div:nth-child(2):after {
+      top: 54px;
+      left: 45px;
+    }
+
+    .lds-roller div:nth-child(3) {
+      animation-delay: -0.108s;
+    }
+
+    .lds-roller div:nth-child(3):after {
+      top: 57px;
+      left: 39px;
+    }
+
+    .lds-roller div:nth-child(4) {
+      animation-delay: -0.144s;
+    }
+
+    .lds-roller div:nth-child(4):after {
+      top: 58px;
+      left: 32px;
+    }
+
+    .lds-roller div:nth-child(5) {
+      animation-delay: -0.18s;
+    }
+
+    .lds-roller div:nth-child(5):after {
+      top: 57px;
+      left: 25px;
+    }
+
+    .lds-roller div:nth-child(6) {
+      animation-delay: -0.216s;
+    }
+
+    .lds-roller div:nth-child(6):after {
+      top: 54px;
+      left: 19px;
+    }
+
+    .lds-roller div:nth-child(7) {
+      animation-delay: -0.252s;
+    }
+
+    .lds-roller div:nth-child(7):after {
+      top: 50px;
+      left: 14px;
+    }
+
+    .lds-roller div:nth-child(8) {
+      animation-delay: -0.288s;
+    }
+
+    .lds-roller div:nth-child(8):after {
+      top: 45px;
+      left: 10px;
+    }
+
+    @keyframes lds-roller {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .pre_loader button.next {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
+  <!-- <div class="container">
       <ul>
         <li><span>Home</span></li>
         <li><span>About us</span></li>
         <li><span>Contact</span></li>
       </ul>
+    </div> -->
+  <div class="pre_loader">
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
+    <button class="next">Next</button>
+  </div>
+  <div class="top_menu">
+      <img class="logo" src="assets/img/toggle/dark_theme.svg">
+    </div>
+  <img class="menu_toggle" src="assets/img/toggle/dark_theme.svg">
+  <nav class="top_main_menu">
+    <div class="menu">
+      <p class="dark_theme_c">Home</p>
+      <p class="dark_theme_c">Home</p>
+      <p class="dark_theme_c">Home</p>
+      <div class="toggle">
+        <input type="checkbox" name="toggle" class="check-checkbox" id="mytoggle">
+        <label class="check-label" for="mytoggle">
+          <div id="background"></div>
+          <img class="switch_img" data-img="dark_theme_sw" src="assets/img/toggle/dark_theme.svg">
+        </label>
+      </div>
+      <div class="languages">
+        <span data-lang="ro" class="lang">RO</span>
+        <span data-lang="en" class="lang">EN</span>
+      </div>
+    </div>
+  </nav>
+  <div class="ball_container">
+      <div class="animContainer">
+        <div class="line"></div>
+        <div class="posAbs objectUpDown">
+          <div class="ball"></div>
+        </div>
+      </div>
+
+      <div class="animContainer">
+        <div class="line"></div>
+        <div class="posAbs objectDownUp">
+          <div class="ball"></div>
+        </div>
+      </div>
+
+      <div class="animContainer">
+        <div class="line"></div>
+        <div class="posAbs objectUpDown">
+          <div class="ball"></div>
+        </div>
+      </div>
+
+      <div class="animContainer">
+        <div class="line"></div>
+        <div class="posAbs objectDownUp">
+          <div class="ball"></div>
+        </div>
+      </div>
+
+      <div class="animContainer">
+        <div class="line"></div>
+        <div class="posAbs objectUpDown">
+          <div class="ball"></div>
+        </div>
+      </div>
+
+      <div class="animContainer">
+          <div class="line"></div>
+          <div class="posAbs objectUpDown">
+            <div class="ball"></div>
+          </div>
+        </div>
+
+        <div class="animContainer">
+            <div class="line"></div>
+            <div class="posAbs objectUpDown">
+              <div class="ball"></div>
+            </div>
+          </div>
+    </div>
+  <section class="top">
+    
+    <p class="dark_theme_c" data-en="This is just a test old chap &#128513" data-ro="">Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Accusamus iure voluptatibus sapiente, laboriosam eveniet provident vel quaerat. Rerum omnis quia iste. Quos
+      quibusdam tenetur et repudiandae vero velit optio saepe!</p>
+    <p class="dark_theme_c" data-en="This is just a test old chap &#128514" data-ro="">Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Accusamus iure voluptatibus sapiente, laboriosam eveniet provident vel quaerat. Rerum omnis quia iste. Quos
+      quibusdam tenetur et repudiandae vero velit optio saepe!</p>
+    <p class="dark_theme_c" data-en="This is just a test old chap &#128517" data-ro="">Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Accusamus iure voluptatibus sapiente, laboriosam eveniet provident vel quaerat. Rerum omnis quia iste. Quos
+      quibusdam tenetur et repudiandae vero velit optio saepe!</p>
+    <p class="dark_theme_c" data-en="This is just a test old chap &#128520" data-ro="">Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Accusamus iure voluptatibus sapiente, laboriosam eveniet provident vel quaerat. Rerum omnis quia iste. Quos
+      quibusdam tenetur et repudiandae vero velit optio saepe!</p>
+      <div class="services_switcher">
+          <div class="left box">
+            <span class="text" id="left_text">design</span>
+            <img class="prev" src="assets/img/switcher/leftArrow.svg">
+          </div>
+          <div class="bar"></div>
+          <div class="right box">
+            <span class="text" id="right_text">web developement</span>
+            <img class="next" src="assets/img/switcher/rightArrow.svg">
+          </div>
+        </div>
+  </section>
 </body>

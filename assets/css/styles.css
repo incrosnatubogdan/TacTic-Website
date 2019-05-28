@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap'); */
 
 html {
   -webkit-font-smoothing: antialiased;
   font-family: 'Playfair Display', serif;
+  overflow-x: hidden;
 }
 
 * {
@@ -21,6 +22,75 @@ html {
   vertical-align: middle;
   text-align: center;
   width: 600px;
+}
+
+img.menu_toggle {
+  position: fixed;
+  width: 10%;
+  max-width: 40px;
+  top: 5%;
+  right: 11%;
+  cursor: pointer;
+  z-index: 11;
+}
+
+nav.top_main_menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 10;
+}
+
+nav.top_main_menu.animate {
+  -webkit-animation: bringMenu 1s;
+  animation: bringMenu 1s;
+  display: block;
+}
+
+nav.top_main_menu .top_menu{
+  position: absolute;
+  width: 10%;
+  max-width: 40px;
+  top: 5%;
+  left: 11%;
+}
+
+img.logo{
+  position: fixed;
+  width: 10%;
+  max-width: 40px;
+  top: 5%;
+  left: 11%;
+  cursor: pointer;
+  z-index: 11;
+}
+
+nav.top_main_menu .menu {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  justify-content: space-evenly;
+}
+
+nav.top_main_menu .menu > p{
+
+}
+
+nav.top_main_menu .menu .languages{
+
+}
+
+nav.top_main_menu .menu .languages > span{
+
 }
 
 ul {
@@ -177,7 +247,7 @@ body {
 }
 
 .toggle {
-  position: absolute;
+  position: relative;
   width: 12.25rem;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -292,6 +362,33 @@ body {
 [type="checkbox"] + .check-label img {
   -webkit-animation: rotateElementReverse forwards 0.3s;
   animation: rotateElementReverse forwards 0.3s;
+}
+
+@-webkit-keyframes bringMenu {
+  0% {
+    left: 100%;
+    opacity: 0;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 00%;
+    opacity: 1;
+  }
+}
+@keyframes bringMenu {
+  0% {
+    left: 100%;
+    opacity: 0;
+  }
+  50% {
+    left: 50%;
+  }
+  100% {
+    left: 00%;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes rotateElement {
@@ -586,10 +683,12 @@ body {
 
 .services_switcher {
   position: absolute;
-    display: flex;
-    width: 20%;
-    bottom: 40px;
-    align-items: center;
+  display: flex;
+  width: 30%;
+  min-width: 100px;
+  bottom: 40px;
+  align-items: center;
+  left: 40%;
 }
 
 .services_switcher .left {
@@ -683,24 +782,105 @@ body {
   }
 }
 
+.ball_container {
+  position: fixed;
+  display: flex;
+  margin-left: 15px;
+  overflow: hidden;
+  height: 100vw;
+  width: 100vh;
+  align-items: flex-end;
+}
+
+.animContainer {
+  width: 15vw;
+  height: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .ball_container {
+    transform: rotate(90deg);
+    margin: 15px 0 0 0;
+    height: 90vw;
+    width: 90vh;
+  }
+  .ball_container .animContainer:last-child,
+  .ball_container .animContainer:nth-child(5n){
+    display: none;
+  }
+  .animContainer {
+    width: 35vw;
+  }
+}
+
+
+
+.posAbs {
+  position: absolute;
+}
+
+.ball { 
+  z-index: 1;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color:#F11267;
+  margin: -5px;
+}
+
+.line {
+  width: 4px;
+  height: 100%;
+  background-color: #4D4D4D;
+  opacity: 0.4;
+}
+
+.objectUpDown {
+  animation: MoveUpDown 2s infinite alternate;
+  bottom: 0;
+}
+
+.objectDownUp {
+  animation: MoveDownUp 2s infinite alternate;
+  bottom: 0;
+}
+
+@keyframes MoveUpDown {
+  100%, 0% {
+    bottom: 10%;
+  }
+  100% {
+    bottom: 85%;
+  }
+}
+
+@keyframes MoveDownUp {
+  100%, 0% {
+    top: 10%;
+  }
+  100% {
+    top: 85%;
+  }
+}
+
 .text_holder p {
   padding: 20px 10%;
 }
 
 .dark_theme_c {
-  color: grey;
+  color: grey !important;
 }
 
 .light_theme_c {
-  color: #f7f7f7
+  color: #f7f7f7 !important
 }
 
 .light_theme_bg {
-  background: #f7f7f7;
+  background: #f7f7f7 !important;
 }
 
 .dark_theme_bg {
-  background: grey;
+  background: grey !important;
 }
 
 .inactive {
