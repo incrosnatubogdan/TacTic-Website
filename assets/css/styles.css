@@ -836,12 +836,12 @@ body {
 }
 
 .objectUpDown {
-  animation: MoveUpDown 2s infinite alternate;
+  animation: MoveUpDown 3s infinite alternate;
   bottom: 0;
 }
 
 .objectDownUp {
-  animation: MoveDownUp 2s infinite alternate;
+  animation: MoveDownUp 3s infinite alternate;
   bottom: 0;
 }
 
