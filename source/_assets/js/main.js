@@ -91,17 +91,16 @@ $(document).ready(function () {
         },2000);
     }
     
-
     jQuery(document).on("click", '.pre_loader button.next', function (event) {
         removeLoader();
     });
     test();
     jQuery(document).on("click", 'img.menu_toggle', function (event) {
         // test();
-        if ($("nav.top_main_menu").hasClass("animate")) {
-            jQuery("nav.top_main_menu").removeClass("animate");
+        if ($("nav.mobile_menu").hasClass("animate")) {
+            jQuery("nav.mobile_menu").removeClass("animate");
         } else {
-            jQuery("nav.top_main_menu").addClass("animate");
+            jQuery("nav.mobile_menu").addClass("animate");
         }
     });
 
@@ -120,7 +119,7 @@ $(document).ready(function () {
             });
             oldLang = newLang;
             // console.log(oldLang)
-            jQuery("nav.top_main_menu").removeClass("animate");
+            jQuery("nav.mobile_menu").removeClass("animate");
         }
         
         
@@ -133,6 +132,34 @@ $(document).ready(function () {
             alert(err.message);
         }
     });
+
+    jQuery(document).on("click",".anim--holder-img", function(event){
+        if($("body").hasClass("notransition")) {
+            $(this).attr("src","assets/images/anim/stop.svg");
+        } else {
+            $(this).attr("src","assets/images/anim/play.svg");
+        }
+        $('body').toggleClass('notransition');
+    });
+
+    jQuery(document).on("click",".show_hidden img", function(event){
+        if($(this).hasClass("up")) {
+            $(this).removeClass("up");
+            $(this).addClass("down");
+            $("section.bottom").removeClass("hide");
+            $("section.bottom").addClass("show");
+        } else {
+            $(this).removeClass("down");
+            $(this).addClass("up");
+            $("section.bottom").addClass("hide");
+            $("section.bottom").removeClass("show");
+        }
+    });
+
+    jQuery(document).on("scroll",".services", function(event){
+        console.log($(this).position())
+    });
+
     jQuery(document).on("click", '#mytoggle', function (event) {
         if ($(this).is(":checked")) {
             // $(this).addClass("checked")
