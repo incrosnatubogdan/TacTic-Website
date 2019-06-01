@@ -364,8 +364,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Server-1\htdocs\TacTic-Website\source\_assets\js\main.js */"./source/_assets/js/main.js");
-module.exports = __webpack_require__(/*! C:\Server-1\htdocs\TacTic-Website\source\_assets\sass\main.scss */"./source/_assets/sass/main.scss");
+__webpack_require__(/*! C:\server\www\TacTic-Website\source\_assets\js\main.js */"./source/_assets/js/main.js");
+module.exports = __webpack_require__(/*! C:\server\www\TacTic-Website\source\_assets\sass\main.scss */"./source/_assets/sass/main.scss");
 
 
 /***/ })
