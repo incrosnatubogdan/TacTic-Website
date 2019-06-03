@@ -264,6 +264,13 @@
       <img class="next next_service" src="assets/images/switcher/rightArrow.svg">
     </div>
   </div>
+  <form class="contact-form">
+    <h3 class="contact-form-title">let's talk...</h3>
+    <input type="text" class="contact-form-field--name" placeholder="name">
+    <input type="email" class="contact-form-field--email" placeholder="email">
+    <textarea class="contact-form-field--textarea"></textarea>
+    <button class="contact-form-send">send</button>
+  </form>
 </section>
 
 @endsection

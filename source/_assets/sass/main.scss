@@ -227,6 +227,32 @@ html {
     }
   }
 
+  .contact-form {
+    display: block;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+    &-title {
+
+    }
+    &-field--name {
+      width: 50%;
+      display: inline;
+      float: left;
+    }
+    &-field--email {
+      width: 50%;
+      display: inline;
+      float: left;
+    }
+    &-field--textarea {
+      width: 100%;
+    }
+    &-send {
+
+    }
+  }
+
   nav.desktop_menu {
     position: fixed;
     right: 0;

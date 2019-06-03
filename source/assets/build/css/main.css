@@ -212,6 +212,25 @@ section.bottom .show_hidden img.down {
           transform: translatex(-50%) rotate(90deg);
 }
 
+.contact-form {
+  display: block;
+  flex-direction: column;
+  width: 40%;
+  margin: 0 auto;
+}
+.contact-form-field--name {
+  width: 50%;
+  display: inline;
+  float: left;
+}
+.contact-form-field--email {
+  width: 50%;
+  display: inline;
+  float: left;
+}
+.contact-form-field--textarea {
+  width: 100%;
+}
 nav.desktop_menu {
   position: fixed;
   right: 0;
