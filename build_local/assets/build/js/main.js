@@ -259,6 +259,28 @@ $(document).ready(function () {
   jQuery(document).on("scroll", ".services", function (event) {
     console.log($(this).position());
   });
+  $(".services").scroll(function () {
+    var totalWidth = $(this).width();
+    var scrollPos = $(this).scrollLeft();
+    var percentScroll = scrollPos / totalWidth;
+
+    if (percentScroll > 0.2 && percentScroll < 0.6) {
+      $(this).animate({
+        scrollLeft: totalWidth
+      }, 500);
+      console.log(percentScroll + "/1");
+    } else if (percentScroll > 1.4 && percentScroll < 1.8) {
+      $(this).animate({
+        scrollLeft: totalWidth * 2
+      }, 500);
+      console.log(percentScroll + "/2");
+    } else if (percentScroll > 1.81 && percentScroll < 2) {
+      $(this).animate({
+        scrollLeft: totalWidth
+      }, 500);
+      console.log(percentScroll + "/3");
+    }
+  });
   jQuery(document).on("click", '#mytoggle', function (event) {
     if ($(this).is(":checked")) {
       // $(this).addClass("checked")

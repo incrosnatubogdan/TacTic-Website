@@ -104,7 +104,7 @@ section.bottom.show {
 }
 section.bottom.show .text-container {
   display: block;
-  margin: 20% 20%;
+  margin: 10%;
   color: white;
 }
 section.bottom.show .services {
@@ -133,6 +133,7 @@ section.bottom .services::-webkit-scrollbar-track {
 section.bottom .services::-webkit-scrollbar-thumb {
   background: #F01267;
   border-radius: 10px;
+  padding: 0 20px;
 }
 section.bottom .services-category {
   min-width: 100%;
