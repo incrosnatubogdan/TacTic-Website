@@ -256,8 +256,43 @@ $(document).ready(function () {
       $("section.bottom").removeClass("show");
     }
   });
-  jQuery(document).on("scroll", ".services", function (event) {
-    console.log($(this).position());
+  $(".services").scroll(function () {
+    var totalWidth = $(this).width();
+    var scrollPos = $(this).scrollLeft();
+    var percentScroll = scrollPos / totalWidth;
+
+    if (percentScroll > 0.2 && percentScroll < 0.6) {
+      $(this).animate({
+        scrollLeft: totalWidth
+      }, 500);
+      console.log(percentScroll + "/1");
+    } else if (percentScroll > 1.4 && percentScroll < 1.8) {
+      $(this).animate({
+        scrollLeft: totalWidth * 2
+      }, 500);
+      console.log(percentScroll + "/2");
+    } else if (percentScroll > 1.81 && percentScroll < 2) {
+      $(this).animate({
+        scrollLeft: totalWidth
+      }, 500);
+      console.log(percentScroll + "/3");
+    } else if (percentScroll < 1.4 && percentScroll > 1.2) {
+      $(this).animate({
+        scrollLeft: 0
+      }, 500);
+      console.log(percentScroll + "/4");
+    }
+  });
+  jQuery(document).on("click", ".desktop_menu > a", function (event) {
+    var showSection = jQuery(this).attr("class");
+    var sectionLength = jQuery("section").length;
+
+    for (var i = 0; i < sectionLength; i++) {
+      jQuery("section").hide();
+      jQuery("section").removeClass("show");
+    }
+
+    jQuery("section." + showSection).addClass("show");
   });
   $(".services").scroll(function () {
     var totalWidth = $(this).width();
@@ -297,17 +332,29 @@ $(document).ready(function () {
       bodyAnimation();
     }
   });
-  var servicesArray = ["design", "web development", "marketing"];
-  var i = 2;
+  var servicesArray = ["marketing", "design", "web development"];
+  var i = 0;
+  var n = 0;
   jQuery(document).on("click", '.services_switcher img', function (event) {
-    $("#left_text").text(servicesArray[i]).fadeIn();
-    i++;
+    if (!jQuery(this).hasClass("next_service")) {
+      $("#left_text").text(servicesArray[i]).fadeIn();
+      i++;
 
-    if (i >= 3) {
-      i = 0;
+      if (i >= 3) {
+        i = 0;
+      }
+
+      $("#right_text").text(servicesArray[i]).fadeIn();
+    } else {
+      $(".container-service:eq(" + n + ")").hide();
+      n++;
+
+      if (n >= 3) {
+        n = 0;
+      }
+
+      $(".container-service:eq(" + n + ")").show();
     }
-
-    $("#right_text").text(servicesArray[i]).fadeIn();
   });
   jQuery(document).on("click", '.round input[type="checkbox"]', function (event) {
     $(".final_price").removeClass("hidden");

@@ -38,9 +38,9 @@
   </div>
 </nav>
 <nav class="desktop_menu">
-  <a href="#whatwedo">Home</a>
+  <a class="top">Home</a>
   <a href="#whatwedo">What we do</a>
-  <a href="#whatwedo">Let's talk</a>
+  <a class="contact">Let's talk</a>
 </nav>
 <section class="top">
   <div class="ball_container">
@@ -101,7 +101,7 @@
     </div>
     <div class="bar"></div>
     <div class="right box">
-      <span class="text" id="right_text">web developement</span>
+      <span class="text" id="right_text">web development</span>
       <img class="next" src="assets/images/switcher/rightArrow.svg">
     </div>
   </div>
@@ -111,41 +111,157 @@
     <img class="up" src="assets/images/switcher/rightArrow.svg">
   </div>
   <div class="text-container">
-  <h2>Lorem ipsum dolor sit amet, consectetur:</h2>
-  <p>Mauris varius interdum sapien non auctor. Curabitur commodo sodales mauris, eu pellentesque elit aliquam et. Mauris tristique augue ac magna maximus interdum. Nunc in risus ut mauris dapibus pharetra. Nam consequat, dolor vitae</p>
-  <div class="services">
-    <div class="services-category">
-      <span class="services-category--title">marketing</span>
-      <ul class="services-category--list">
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-      </ul>
+    <h2>Lorem ipsum dolor sit amet, consectetur:</h2>
+    <p>Mauris varius interdum sapien non auctor. Curabitur commodo sodales mauris, eu pellentesque elit aliquam et.
+      Mauris tristique augue ac magna maximus interdum. Nunc in risus ut mauris dapibus pharetra. Nam consequat, dolor
+      vitae</p>
+    <div class="services">
+      <div class="services-category">
+        <span class="services-category--title">marketing</span>
+        <ul class="services-category--list">
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+        </ul>
+      </div>
+      <div class="services-category">
+        <span class="services-category--title">marketing</span>
+        <ul class="services-category--list">
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+        </ul>
+      </div>
+      <div class="services-category">
+        <span class="services-category--title">marketing</span>
+        <ul class="services-category--list">
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+          <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
+        </ul>
+      </div>
     </div>
-    <div class="services-category">
-    <span class="services-category--title">marketing</span>
-    <ul class="services-category--list">
-    <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-      </ul>
+</section>
+<section class="contact">
+  <div class="container container-service">
+    <h3>Web Design</h3>
+    <div class="round web_design">
+      <input type="checkbox" data-price="280" id="checkbox" />
+      <label for="checkbox">
+        <p>Ceva text aici</p>
+      </label>
     </div>
-    <div class="services-category">
-    <span class="services-category--title">marketing</span>
-    <ul class="services-category--list">
-    <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-        <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
-      </ul>
+    <div class="round web_design">
+      <input type="checkbox" data-price="280" id="checkbox_1" />
+      <label for="checkbox_1">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round web_design">
+      <input type="checkbox" data-price="280" id="checkbox_2" />
+      <label for="checkbox_2">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round web_design">
+      <input type="checkbox" data-price="280" id="checkbox_3" />
+      <label for="checkbox_3">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round web_design">
+      <input type="checkbox" data-price="280" id="checkbox_4" />
+      <label for="checkbox_4">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+  </div>
+  <div class="container container-service">
+    <h3>Web Dev</h3>
+    <div class="round web_dev">
+      <input type="checkbox" data-price="280" id="checkbox_5" />
+      <label for="checkbox_5">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round web_dev">
+      <input type="checkbox" data-price="280" id="checkbox_6" />
+      <label for="checkbox_6">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round web_dev">
+      <input type="checkbox" data-price="280" id="checkbox_7" />
+      <label for="checkbox_7">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round web_dev">
+      <input type="checkbox" data-price="280" id="checkbox_9" />
+      <label for="checkbox_9">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round web_dev">
+      <input type="checkbox" data-price="280" id="checkbox_8" />
+      <label for="checkbox_8">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+  </div>
+  <div class="container container-service">
+    <h3>Marketing</h3>
+    <div class="round marketing">
+      <input type="checkbox" data-price="280" id="checkbox_10" />
+      <label for="checkbox_10">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round marketing">
+      <input type="checkbox" data-price="280" id="checkbox_11" />
+      <label for="checkbox_11">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round marketing">
+      <input type="checkbox" data-price="280" id="checkbox_12" />
+      <label for="checkbox_12">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round marketing">
+      <input type="checkbox" data-price="280" id="checkbox_13" />
+      <label for="checkbox_13">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+    <div class="round marketing">
+      <input type="checkbox" data-price="280" id="checkbox_14" />
+      <label for="checkbox_14">
+        <p>Ceva text aici</p>
+      </label>
+    </div>
+  </div>
+  <div class="payment">
+      <p class="old_price hidden">0</p>
+      <h3 class="final_price hidden">0</h3>
+    </div>
+  <div class="services_switcher services_switcher-contact">
+    <div class="left box">
+      <img class="prev next_service" src="assets/images/switcher/leftArrow.svg">
+    </div>
+    <div class="bar"></div>
+    <div class="right box">
+      <img class="next next_service" src="assets/images/switcher/rightArrow.svg">
     </div>
   </div>
 </section>
