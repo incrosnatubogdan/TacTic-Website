@@ -1,8 +1,8 @@
-/* @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap');
 
 html {
     -webkit-font-smoothing: antialiased;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     overflow-x: hidden;
   }
 
@@ -59,7 +59,7 @@ html {
     width: 10%;
     max-width: 40px;
     top: 5%;
-    right: 11%;
+    left: 80vw;
     cursor: pointer;
     z-index: 11;
   }
@@ -75,16 +75,16 @@ html {
     -ms-transition-property: none !important;
     -webkit-transition-property: none !important;
     transition-property: none !important;
-    -o-transform: none !important;
-    -moz-transform: none !important;
-    -ms-transform: none !important;
+    // -o-transform: none !important;
+    // -moz-transform: none !important;
+    // -ms-transform: none !important;
+    // -webkit-transform: none !important;
+    // transform: none !important;
     animation: none !important;
     -ms-animation: none !important;
     -o-animation: none !important;
     -moz-animation: none !important;
-    transform: none !important;
     -webkit-animation: none !important;
-    -webkit-transform: none !important;
   }
 
   .anim--holder {
@@ -232,6 +232,20 @@ html {
     flex-direction: column;
     width: 40%;
     margin: 0 auto;
+    input,
+    textarea {
+      border: none;
+      color: #B3B3B3;
+      font-size: 20px;
+      &::-webkit-input-placeholder {
+        font-size: 20px;
+        font-family: "Playfair Display", serif;
+      }
+
+    }
+    input {
+      height: 22px;
+    }
     &-title {
 
     }
@@ -247,9 +261,13 @@ html {
     }
     &-field--textarea {
       width: 100%;
+      margin: 20px 0;
     }
     &-send {
-
+      border: none;
+      font-size: 20px;
+      color: #b3b3b3;
+      background: none;
     }
   }
 
@@ -277,6 +295,16 @@ html {
         
       }
     }
+    .languages {
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+      span:hover {
+        border-bottom: 3px solid #F01267;
+        color: #F01267;
+      }
+    }
     
   }
   
@@ -286,7 +314,7 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 120vh;
     background: white;
     z-index: 10;
     &.animate {
@@ -1138,7 +1166,7 @@ html {
   }
   
   .ball_container {
-    position: fixed;
+    position: absolute;
     display: flex;
     margin-left: 15px;
     overflow: hidden;
@@ -1165,6 +1193,22 @@ html {
     nav.desktop_menu {
       display: none;
     }
+
+    section {
+      &.bottom {
+        height: 100vh;
+        position: relative;
+        .text-container,
+        .services {
+          display: block;
+        }
+      }
+      &.contact {
+        display: block;
+        position: relative;
+      }
+    }
+    
     section .lg-title {
       font-size: 4vh;
     }

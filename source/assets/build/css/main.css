@@ -1,5 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap'); */
-html {
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap);html {
   -webkit-font-smoothing: antialiased;
   font-family: "Playfair Display", serif;
   overflow-x: hidden;
@@ -58,7 +57,7 @@ img.menu_toggle {
   width: 10%;
   max-width: 40px;
   top: 5%;
-  right: 11%;
+  left: 80vw;
   cursor: pointer;
   z-index: 11;
 }
@@ -66,16 +65,11 @@ img.menu_toggle {
 .notransition * {
   transition: none !important;
   transition-property: none !important;
-  -o-transform: none !important;
-  -moz-transform: none !important;
-  -ms-transform: none !important;
   animation: none !important;
   -ms-animation: none !important;
   -o-animation: none !important;
   -moz-animation: none !important;
-  transform: none !important;
   -webkit-animation: none !important;
-  -webkit-transform: none !important;
 }
 
 .anim--holder {
@@ -218,6 +212,20 @@ section.bottom .show_hidden img.down {
   width: 40%;
   margin: 0 auto;
 }
+.contact-form input,
+.contact-form textarea {
+  border: none;
+  color: #B3B3B3;
+  font-size: 20px;
+}
+.contact-form input::-webkit-input-placeholder,
+.contact-form textarea::-webkit-input-placeholder {
+  font-size: 20px;
+  font-family: "Playfair Display", serif;
+}
+.contact-form input {
+  height: 22px;
+}
 .contact-form-field--name {
   width: 50%;
   display: inline;
@@ -230,7 +238,15 @@ section.bottom .show_hidden img.down {
 }
 .contact-form-field--textarea {
   width: 100%;
+  margin: 20px 0;
 }
+.contact-form-send {
+  border: none;
+  font-size: 20px;
+  color: #b3b3b3;
+  background: none;
+}
+
 nav.desktop_menu {
   position: fixed;
   right: 0;
@@ -253,6 +269,16 @@ nav.desktop_menu a:hover {
   border-bottom: 3px solid #F01267;
   color: #F01267;
 }
+nav.desktop_menu .languages {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+nav.desktop_menu .languages span:hover {
+  border-bottom: 3px solid #F01267;
+  color: #F01267;
+}
 
 nav.mobile_menu {
   display: none;
@@ -260,7 +286,7 @@ nav.mobile_menu {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 120vh;
   background: white;
   z-index: 10;
 }
@@ -961,7 +987,7 @@ body {
   }
 }
 .ball_container {
-  position: fixed;
+  position: absolute;
   display: flex;
   margin-left: 15px;
   overflow: hidden;
@@ -986,6 +1012,19 @@ body {
 @media screen and (max-width: 500px) {
   nav.desktop_menu {
     display: none;
+  }
+
+  section.bottom {
+    height: 100vh;
+    position: relative;
+  }
+  section.bottom .text-container,
+section.bottom .services {
+    display: block;
+  }
+  section.contact {
+    display: block;
+    position: relative;
   }
 
   section .lg-title {

@@ -17,7 +17,7 @@
 <div class="anim--holder">
   <img class="anim--holder-img" src="assets/images/anim/stop.svg">
 </div>
-<img class="logo" src="assets/images/toggle/dark_theme.svg">
+<img class="logo" src="assets/images/logo.png">
 <img class="menu_toggle" src="assets/images/toggle/dark_theme.svg">
 <nav class="mobile_menu">
   <div class="menu">
@@ -41,6 +41,10 @@
   <a class="top">Home</a>
   <a href="#whatwedo">What we do</a>
   <a class="contact">Let's talk</a>
+  <div class="languages">
+      <span data-lang="ro" class="lang">RO</span>
+      <span data-lang="en" class="lang">EN</span>
+    </div>
 </nav>
 <section class="top">
   <div class="ball_container">
@@ -268,7 +272,7 @@
     <h3 class="contact-form-title">let's talk...</h3>
     <input type="text" class="contact-form-field--name" placeholder="name">
     <input type="email" class="contact-form-field--email" placeholder="email">
-    <textarea class="contact-form-field--textarea"></textarea>
+    <textarea rows="10" cols="50" class="contact-form-field--textarea" placeholder="Tell us a little about your great ideea"></textarea>
     <button class="contact-form-send">send</button>
   </form>
 </section>
