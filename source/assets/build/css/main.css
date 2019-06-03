@@ -31,6 +31,27 @@ body {
   text-align: center;
   width: 600px;
 }
+.container-service {
+  display: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 0 auto;
+  position: relative;
+  padding: 70px 20px 0;
+  width: 20%;
+  max-width: 300px;
+  min-width: 200px;
+}
+.container-service:first-child {
+  display: block;
+}
+.container-service h3 {
+  position: absolute;
+  font-size: 33px;
+  margin: 0;
+  top: 0;
+  left: -70px;
+}
 
 img.menu_toggle {
   position: fixed;
@@ -87,6 +108,31 @@ section .lg-title {
 section.top {
   height: calc(100vh - 40px);
 }
+section.top.show {
+  display: block !important;
+  -webkit-animation: slide-in-top 1s;
+  animation: slide-in-top 1s;
+}
+section.contact {
+  position: absolute;
+  display: none;
+  top: 0;
+  background: white;
+  padding-top: 10%;
+}
+section.contact.show {
+  display: block !important;
+  -webkit-animation: slide-in-top 1s;
+  animation: slide-in-top 1s;
+}
+section.contact .payment {
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 section.bottom {
   position: absolute;
   background: #333333;
@@ -99,12 +145,13 @@ section.bottom.hide {
 section.bottom.show {
   -webkit-animation: slide-in-top 1s;
   animation: slide-in-top 1s;
+  display: block !important;
   height: 100vh;
   top: 0;
 }
 section.bottom.show .text-container {
   display: block;
-  margin: 20% 20%;
+  margin: 10%;
   color: white;
 }
 section.bottom.show .services {
@@ -128,7 +175,6 @@ section.bottom .services::-webkit-scrollbar {
 section.bottom .services::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
-  padding: 0 10%;
 }
 section.bottom .services::-webkit-scrollbar-thumb {
   background: #F01267;
@@ -181,6 +227,7 @@ nav.desktop_menu a {
   padding-bottom: 3px;
   text-decoration: none;
   border-bottom: 3px solid grey;
+  cursor: pointer;
 }
 nav.desktop_menu a:hover {
   border-bottom: 3px solid #F01267;
@@ -253,7 +300,7 @@ li {
   border-radius: 3px;
   cursor: pointer;
   height: 28px;
-  left: 0;
+  right: 0;
   position: absolute;
   top: 0;
   width: 28px;
@@ -278,7 +325,7 @@ li {
   margin: 0;
   width: 200px;
   text-align: left;
-  left: 40px;
+  right: 0px;
   top: 50%;
   -webkit-transform: translatey(-50%);
           transform: translatey(-50%);
@@ -738,6 +785,11 @@ body {
   bottom: 40px;
   align-items: center;
   left: 40%;
+}
+.services_switcher-contact {
+  position: initial;
+  margin: 20px auto 0;
+  justify-content: center;
 }
 .services_switcher .left {
   width: auto;

@@ -31,6 +31,27 @@ html {
     vertical-align: middle;
     text-align: center;
     width: 600px;
+    &-service {
+      display: none;
+      border: 1px solid black;
+      border-radius: 5px;
+      margin: 0 auto;
+      position: relative;
+      padding: 70px 20px 0;
+      width: 20%;
+      max-width: 300px;
+      min-width: 200px;
+      &:first-child {
+        display: block;
+      }
+      h3 {
+        position: absolute;
+        font-size: 33px;
+        margin: 0;
+        top: 0;
+        left: -70px;
+      }
+    }
   }
   
   img.menu_toggle {
@@ -94,6 +115,31 @@ html {
     }
     &.top {
       height: calc(100vh - 40px);
+      &.show{
+        display: block !important;
+        -webkit-animation: slide-in-top 1s;
+        animation: slide-in-top 1s;
+      }
+    }
+    &.contact {
+      position: absolute;
+      display: none;
+      top: 0;
+      background: white;
+      padding-top: 10%;
+      &.show{
+        display: block !important;
+        -webkit-animation: slide-in-top 1s;
+        animation: slide-in-top 1s;
+      }
+      .payment {
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
     }
     &.bottom {
       position: absolute;
@@ -106,11 +152,12 @@ html {
       &.show {
         -webkit-animation: slide-in-top 1s;
         animation: slide-in-top 1s;
+        display: block !important;
         height: 100vh;
         top: 0;
         .text-container {
           display: block;
-          margin: 20% 20%;
+          margin: 10%;
           color: white;
         }
         .services {
@@ -134,7 +181,6 @@ html {
         &::-webkit-scrollbar-track {
           box-shadow: inset 0 0 5px grey; 
           border-radius: 10px;
-          padding: 0 10%;
         }
         &::-webkit-scrollbar-thumb {
           background: #F01267; 
@@ -195,6 +241,8 @@ html {
       padding-bottom: 3px;
       text-decoration: none;
       border-bottom: 3px solid grey;
+      cursor: pointer;
+      
       &:hover {
         // text-decoration: underline;
         border-bottom: 3px solid #F01267;
@@ -308,7 +356,7 @@ html {
       border-radius: 3px;
       cursor: pointer;
       height: 28px;
-      left: 0;
+      right: 0;
       position: absolute;
       top: 0;
       width: 28px;
@@ -331,7 +379,7 @@ html {
         margin: 0;
         width: 200px;
         text-align: left;
-        left: 40px;
+        right: 0px;
         top: 50%;
         transform: translatey(-50%);
       }
@@ -865,6 +913,11 @@ html {
     bottom: 40px;
     align-items: center;
     left: 40%;
+    &-contact {
+      position: initial;
+      margin: 20px auto 0;
+      justify-content: center;
+    }
     .left {
       width: auto;
     }
