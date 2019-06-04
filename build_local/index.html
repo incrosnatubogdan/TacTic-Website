@@ -1,35 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="/assets/build/css/main.css?id=dd6730b0be3c0b604b45">
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript" src="/assets/build/js/main.js?id=1d1391103d17e8b13ab8"></script>
-        <style>
-            .pre_loader{width:100vw;height:100vh;position:absolute;left:0;right:0;z-index:1000}.lds-roller{display:inline-block;position:absolute;width:64px;height:64px;left:50%;top:50%;transform:translate(-50%,-50%)}.lds-roller div{animation:lds-roller 1.2s cubic-bezier(.5,0,.5,1) infinite;transform-origin:32px 32px}.lds-roller div:after{content:" ";display:block;position:absolute;width:6px;height:6px;border-radius:50%;background:#000;margin:-3px 0 0 -3px}.lds-roller div:nth-child(1){animation-delay:-36ms}.lds-roller div:nth-child(1):after{top:50px;left:50px}.lds-roller div:nth-child(2){animation-delay:-72ms}.lds-roller div:nth-child(2):after{top:54px;left:45px}.lds-roller div:nth-child(3){animation-delay:-108ms}.lds-roller div:nth-child(3):after{top:57px;left:39px}.lds-roller div:nth-child(4){animation-delay:-144ms}.lds-roller div:nth-child(4):after{top:58px;left:32px}.lds-roller div:nth-child(5){animation-delay:-.18s}.lds-roller div:nth-child(5):after{top:57px;left:25px}.lds-roller div:nth-child(6){animation-delay:-216ms}.lds-roller div:nth-child(6):after{top:54px;left:19px}.lds-roller div:nth-child(7){animation-delay:-252ms}.lds-roller div:nth-child(7):after{top:50px;left:14px}.lds-roller div:nth-child(8){animation-delay:-288ms}.lds-roller div:nth-child(8):after{top:45px;left:10px}@keyframes  lds-roller{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}.pre_loader button.next{display:none}
-        </style>
-    </head>
-    <body>
-        <div class="pre_loader">
-  <div class="lds-roller">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="/assets/build/css/main.css?id=d08d8a1664881ed4f4d9">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/assets/build/js/main.js?id=e51e9c6ef335e5c6d4f6"></script>
+    <style>
+        .pre_loader {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: white;
+        }
+
+        img.pre_loader-logo {
+            width: 247px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pre_loader button.next {
+            display: none;
+            position: relative
+        }
+
+        .pre_loader img.next {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .body {
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .pre_loader .posAbs {
+            position: absolute;
+        }
+
+        #bgLoader {
+            background-color: #B3B3B3;
+            width: 100%;
+            height: 4vh;
+            top: 0px;
+            box-shadow: 0 0 5px white;
+        }
+
+        .loader {
+            top: 0px;
+            width: 100%;
+            height: 4vh;
+            background-color: #F01267;
+            background-size: 1vh;
+            animation: loader 7s ease-in infinite;
+        }
+
+        @keyframes  loader {
+            0% {
+                width: 0;
+            }
+
+            35% {
+                width: 35%;
+            }
+
+            65% {
+                width: 75%;
+            }
+
+            91% {
+                width: 91%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .firstText {
+            color: white;
+            position: absolute;
+            top: 8vh;
+            font-size: 1.2rem;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .firstText:before {
+            content: "";
+            color: #B3B3B3;
+            animation: switch 7s linear infinite;
+        }
+
+        @keyframes  switch {
+            0% {
+                content: 'deploying to motherload for some content'
+            }
+
+            15% {
+                content: ' "loading css/html/js" '
+            }
+
+            30% {
+                content: '"the website engineer it\'s lost"'
+            }
+
+            45% {
+                content: 'finding the missing css'
+            }
+
+            60% {
+                content: 'we can do it'
+            }
+
+            75% {
+                content: 'last javascript it s here'
+            }
+
+            80% {
+                content: 'main server it here'
+            }
+
+            95% {
+                content: 'almost there'
+            }
+        }
+
+        /* css for button */
+
+        .container {
+            margin: 0 auto 0;
+            position: absolute;
+            top: 45%;
+            right: 50px;
+            width: auto;
+        }
+
+        .pulseButton {
+            width: 35px;
+            height: 35px;
+            border: none;
+            box-shadow: 0 0 0 0 rgba(193, 25, 89, 0.7);
+            border-radius: 50%;
+            background-color: #F11267;
+            background-size: cover;
+            background-repeat: no-repeat;
+            cursor: pointer;
+            -webkit-animation: pulse 1.50s infinite cubic-bezier(0.66, 0, 0, 1);
+            -moz-animation: pulse 1.50s infinite cubic-bezier(0.66, 0, 0, 1);
+            -ms-animation: pulse 1.50s infinite cubic-bezier(0.66, 0, 0, 1);
+            animation: pulse 1.50s infinite cubic-bezier(0.66, 0, 0, 1);
+        }
+
+        .pulseButton:hover {
+            -webkit-animation: none;
+            -moz-animation: none;
+            -ms-animation: none;
+            animation: none;
+        }
+
+        @-webkit-keyframes pulse {
+            to {
+                box-shadow: 0 0 0 25px rgba(214, 18, 103, 0);
+            }
+        }
+
+        @-moz-keyframes pulse {
+            to {
+                box-shadow: 0 0 0 25px rgba(214, 18, 103, 0);
+            }
+        }
+
+        @-ms-keyframes pulse {
+            to {
+                box-shadow: 0 0 0 25px rgba(214, 18, 103, 0);
+            }
+        }
+
+        @keyframes  pulse {
+            to {
+                box-shadow: 0 0 0 25px rgba(214, 18, 103, 0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pre_loader">
+  <div id="bgLoader" class="posAbs"></div>
+  <div class="loader posAbs"></div>
+  <div class="firstText"></div>
+  <img class="pre_loader-logo" src="assets/images/logo.svg">
+  <div class="container">
+    <button class="pulseButton next">
+      <img class="next" src="assets/images/switcher/rightArrow.svg">
+    </button>
   </div>
-  <button class="next">Next</button>
+</div>
 </div>
 <div class="anim--holder">
   <img class="anim--holder-img" src="assets/images/anim/stop.svg">
 </div>
-<img class="logo" src="assets/images/logo.png">
-<img class="menu_toggle" src="assets/images/toggle/dark_theme.svg">
+<img class="logo" src="assets/images/logo.svg">
+<img class="menu_toggle" src="assets/images/mobile_nav.svg">
 <nav class="mobile_menu">
   <div class="menu">
     <p class="dark_theme_c">Home</p>
@@ -50,12 +234,12 @@
 </nav>
 <nav class="desktop_menu">
   <a class="top">Home</a>
-  <a href="#whatwedo">What we do</a>
+  <a class="services-all">What we do</a>
   <a class="contact">Let's talk</a>
   <div class="languages">
-      <span data-lang="ro" class="lang">RO</span>
-      <span data-lang="en" class="lang">EN</span>
-    </div>
+    <span data-lang="ro" class="lang">RO</span>
+    <span data-lang="en" class="lang">EN</span>
+  </div>
 </nav>
 <section class="top">
   <div class="ball_container">
@@ -166,8 +350,21 @@
       </div>
     </div>
 </section>
-<section class="contact">
-  <div class="container container-service">
+<section class="services-all">
+  <div class="container-underline">
+    <h3>who we are</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus laboriosam deserunt voluptas, repellat
+      culpa numquam ratione recusandae facilis voluptate placeat, ipsum sunt itaque rerum rem quibusdam. Magnam, ut
+      laudantium!</p>
+  </div>
+  <img class="large-img what_we" src="assets/images/what_we_img.png" align="right">
+  <div class="container-underline">
+    <h3>who we are</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus laboriosam deserunt voluptas, repellat
+      culpa numquam ratione recusandae facilis voluptate placeat, ipsum sunt itaque rerum rem quibusdam. Magnam, ut
+      laudantium!</p>
+  </div>
+  <div class="container-service show" >
     <h3>Web Design</h3>
     <div class="round web_design">
       <input type="checkbox" data-price="280" id="checkbox" />
@@ -200,7 +397,7 @@
       </label>
     </div>
   </div>
-  <div class="container container-service">
+  <div class="container-service">
     <h3>Web Dev</h3>
     <div class="round web_dev">
       <input type="checkbox" data-price="280" id="checkbox_5" />
@@ -233,7 +430,7 @@
       </label>
     </div>
   </div>
-  <div class="container container-service">
+  <div class="container-service">
     <h3>Marketing</h3>
     <div class="round marketing">
       <input type="checkbox" data-price="280" id="checkbox_10" />
@@ -267,9 +464,9 @@
     </div>
   </div>
   <div class="payment">
-      <p class="old_price hidden">0</p>
-      <h3 class="final_price hidden">0</h3>
-    </div>
+    <p class="old_price hidden">0</p>
+    <h3 class="final_price hidden">0</h3>
+  </div>
   <div class="services_switcher services_switcher-contact">
     <div class="left box">
       <img class="prev next_service" src="assets/images/switcher/leftArrow.svg">
@@ -279,14 +476,26 @@
       <img class="next next_service" src="assets/images/switcher/rightArrow.svg">
     </div>
   </div>
+  <form class="contact-form hidden secret">
+    <h3 class="contact-form-title">let's talk...</h3>
+    <input type="text" class="contact-form-field--name" placeholder="name">
+    <input type="email" class="contact-form-field--email" placeholder="email">
+    <textarea rows="10" cols="50" class="contact-form-field--textarea"
+      placeholder="Tell us a little about your great ideea"></textarea>
+    <button class="contact-form-send">send</button>
+  </form>
+</section>
+<section class="contact">
   <form class="contact-form">
     <h3 class="contact-form-title">let's talk...</h3>
     <input type="text" class="contact-form-field--name" placeholder="name">
     <input type="email" class="contact-form-field--email" placeholder="email">
-    <textarea rows="10" cols="50" class="contact-form-field--textarea" placeholder="Tell us a little about your great ideea"></textarea>
+    <textarea rows="10" cols="50" class="contact-form-field--textarea"
+      placeholder="Tell us a little about your great ideea"></textarea>
     <button class="contact-form-send">send</button>
   </form>
 </section>
 
-    </body>
+</body>
+
 </html>

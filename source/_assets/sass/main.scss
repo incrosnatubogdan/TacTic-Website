@@ -41,7 +41,7 @@ html {
       width: 20%;
       max-width: 300px;
       min-width: 200px;
-      &:first-child {
+      &.show {
         display: block;
       }
       h3 {
@@ -56,8 +56,7 @@ html {
   
   img.menu_toggle {
     position: fixed;
-    width: 10%;
-    max-width: 40px;
+    width: 43px;
     top: 5%;
     left: 80vw;
     cursor: pointer;
@@ -104,6 +103,13 @@ html {
     width: 100vw;
     height: 100vh;
     position: relative;
+    &.services-all {
+      display: none;
+      &.show {
+        display: block !important;
+        padding-top: 20vh;
+      }
+    }
     .lg-title {
       font-size: 7vh;
       display: flex;
@@ -231,7 +237,7 @@ html {
     display: block;
     flex-direction: column;
     width: 40%;
-    margin: 0 auto;
+    margin: 30px auto;
     input,
     textarea {
       border: none;
@@ -273,7 +279,7 @@ html {
 
   nav.desktop_menu {
     position: fixed;
-    right: 0;
+    right: 10vw;
     width: 85vh;
     display: flex;
     align-items: center;
@@ -292,7 +298,11 @@ html {
         // text-decoration: underline;
         border-bottom: 3px solid #F01267;
         color: #F01267;
-        
+      }
+
+      &.white {
+        color: white;
+        border-bottom: 3px solid white;
       }
     }
     .languages {
@@ -300,6 +310,9 @@ html {
       top: 0;
       right: 0;
       cursor: pointer;
+      &.white {
+        color: white;
+      }
       span:hover {
         border-bottom: 3px solid #F01267;
         color: #F01267;
@@ -331,6 +344,20 @@ html {
     }
   }
   
+  .container-underline {
+    width: 50%;
+    margin-left: 10%;
+    h3 {
+      font-size: 50px;
+      margin: 0;
+      border-bottom: 2px solid #F01267;
+      width: 60%;
+    }
+    p {
+      
+    }
+  }
+
   img.logo {
     position: fixed;
     width: 10%;
@@ -432,7 +459,7 @@ html {
         position: absolute;
         font-size: 12px;
         margin: 0;
-        width: 200px;
+        width: 15vw;
         text-align: left;
         right: 0px;
         top: 50%;
@@ -502,6 +529,12 @@ html {
   
   [type="checkbox"] {
     display: none;
+  }
+
+  img.what_we {
+    width: 40%;
+    display: block;
+    margin-left: 50%;
   }
   
   .check-label {
@@ -1207,6 +1240,7 @@ html {
         display: block;
         position: relative;
       }
+
     }
     
     section .lg-title {
@@ -1303,3 +1337,5 @@ html {
   .inactive {
     display: none !important;
   }
+
+  

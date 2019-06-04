@@ -2,23 +2,22 @@
 
 @section('body')
 <div class="pre_loader">
-  <div class="lds-roller">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+  <div id="bgLoader" class="posAbs"></div>
+  <div class="loader posAbs"></div>
+  <div class="firstText"></div>
+  <img class="pre_loader-logo" src="assets/images/logo.svg">
+  <div class="container">
+    <button class="pulseButton next">
+      <img class="next" src="assets/images/switcher/rightArrow.svg">
+    </button>
   </div>
-  <button class="next">Next</button>
+</div>
 </div>
 <div class="anim--holder">
   <img class="anim--holder-img" src="assets/images/anim/stop.svg">
 </div>
-<img class="logo" src="assets/images/logo.png">
-<img class="menu_toggle" src="assets/images/toggle/dark_theme.svg">
+<img class="logo" src="assets/images/logo.svg">
+<img class="menu_toggle" src="assets/images/mobile_nav.svg">
 <nav class="mobile_menu">
   <div class="menu">
     <p class="dark_theme_c">Home</p>
@@ -39,12 +38,12 @@
 </nav>
 <nav class="desktop_menu">
   <a class="top">Home</a>
-  <a href="#whatwedo">What we do</a>
+  <a class="services-all">What we do</a>
   <a class="contact">Let's talk</a>
   <div class="languages">
-      <span data-lang="ro" class="lang">RO</span>
-      <span data-lang="en" class="lang">EN</span>
-    </div>
+    <span data-lang="ro" class="lang">RO</span>
+    <span data-lang="en" class="lang">EN</span>
+  </div>
 </nav>
 <section class="top">
   <div class="ball_container">
@@ -155,8 +154,21 @@
       </div>
     </div>
 </section>
-<section class="contact">
-  <div class="container container-service">
+<section class="services-all">
+  <div class="container-underline">
+    <h3>who we are</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus laboriosam deserunt voluptas, repellat
+      culpa numquam ratione recusandae facilis voluptate placeat, ipsum sunt itaque rerum rem quibusdam. Magnam, ut
+      laudantium!</p>
+  </div>
+  <img class="large-img what_we" src="assets/images/what_we_img.png" align="right">
+  <div class="container-underline">
+    <h3>who we are</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ducimus laboriosam deserunt voluptas, repellat
+      culpa numquam ratione recusandae facilis voluptate placeat, ipsum sunt itaque rerum rem quibusdam. Magnam, ut
+      laudantium!</p>
+  </div>
+  <div class="container-service show" >
     <h3>Web Design</h3>
     <div class="round web_design">
       <input type="checkbox" data-price="280" id="checkbox" />
@@ -189,7 +201,7 @@
       </label>
     </div>
   </div>
-  <div class="container container-service">
+  <div class="container-service">
     <h3>Web Dev</h3>
     <div class="round web_dev">
       <input type="checkbox" data-price="280" id="checkbox_5" />
@@ -222,7 +234,7 @@
       </label>
     </div>
   </div>
-  <div class="container container-service">
+  <div class="container-service">
     <h3>Marketing</h3>
     <div class="round marketing">
       <input type="checkbox" data-price="280" id="checkbox_10" />
@@ -256,9 +268,9 @@
     </div>
   </div>
   <div class="payment">
-      <p class="old_price hidden">0</p>
-      <h3 class="final_price hidden">0</h3>
-    </div>
+    <p class="old_price hidden">0</p>
+    <h3 class="final_price hidden">0</h3>
+  </div>
   <div class="services_switcher services_switcher-contact">
     <div class="left box">
       <img class="prev next_service" src="assets/images/switcher/leftArrow.svg">
@@ -268,11 +280,22 @@
       <img class="next next_service" src="assets/images/switcher/rightArrow.svg">
     </div>
   </div>
+  <form class="contact-form hidden secret">
+    <h3 class="contact-form-title">let's talk...</h3>
+    <input type="text" class="contact-form-field--name" placeholder="name">
+    <input type="email" class="contact-form-field--email" placeholder="email">
+    <textarea rows="10" cols="50" class="contact-form-field--textarea"
+      placeholder="Tell us a little about your great ideea"></textarea>
+    <button class="contact-form-send">send</button>
+  </form>
+</section>
+<section class="contact">
   <form class="contact-form">
     <h3 class="contact-form-title">let's talk...</h3>
     <input type="text" class="contact-form-field--name" placeholder="name">
     <input type="email" class="contact-form-field--email" placeholder="email">
-    <textarea rows="10" cols="50" class="contact-form-field--textarea" placeholder="Tell us a little about your great ideea"></textarea>
+    <textarea rows="10" cols="50" class="contact-form-field--textarea"
+      placeholder="Tell us a little about your great ideea"></textarea>
     <button class="contact-form-send">send</button>
   </form>
 </section>

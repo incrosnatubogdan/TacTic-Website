@@ -152,7 +152,6 @@ jQuery.fn.scrollCenterORI = function (elem, speed) {
 
 function showHideButton() {
   jQuery(".pre_loader button.next").show();
-  setCookie("loader", "true", "2");
 }
 
 function bodyAnimation() {
@@ -185,6 +184,7 @@ function bodyAnimation() {
 
 function removeLoader() {
   jQuery(".pre_loader").remove();
+  setCookie("loader", "true", "2");
 }
 
 $(document).ready(function () {
@@ -247,11 +247,15 @@ $(document).ready(function () {
     if ($(this).hasClass("up")) {
       $(this).removeClass("up");
       $(this).addClass("down");
+      $("nav.desktop_menu a").addClass("white");
+      $("nav.desktop_menu .languages").addClass("white");
       $("section.bottom").removeClass("hide");
       $("section.bottom").addClass("show");
     } else {
       $(this).removeClass("down");
       $(this).addClass("up");
+      $("nav.desktop_menu a").removeClass("white");
+      $("nav.desktop_menu .languages").removeClass("white");
       $("section.bottom").addClass("hide");
       $("section.bottom").removeClass("show");
     }
@@ -358,6 +362,7 @@ $(document).ready(function () {
   });
   jQuery(document).on("click", '.round input[type="checkbox"]', function (event) {
     $(".final_price").removeClass("hidden");
+    $(".contact-form.secret").removeClass("hidden");
     var category = $(this).parent().attr('class').split(' ')[1];
     $(".final_price").addClass(category);
     var noOfDisc = $('.final_price').attr("class").split(' ').length;
@@ -394,6 +399,7 @@ $(document).ready(function () {
         $(".final_price").text(totalPrice + "€");
       } else {
         $(".old_price").addClass("hidden");
+        $(".contact-form.secret").addClass("hidden");
         newPrice = 0;
         $("input:checked").each(function () {
           var currentPrice = parseInt($(this).attr("data-price"));
@@ -433,8 +439,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\server\www\TacTic-Website\source\_assets\js\main.js */"./source/_assets/js/main.js");
-module.exports = __webpack_require__(/*! C:\server\www\TacTic-Website\source\_assets\sass\main.scss */"./source/_assets/sass/main.scss");
+__webpack_require__(/*! C:\Server-1\htdocs\TacTic-Website\source\_assets\js\main.js */"./source/_assets/js/main.js");
+module.exports = __webpack_require__(/*! C:\Server-1\htdocs\TacTic-Website\source\_assets\sass\main.scss */"./source/_assets/sass/main.scss");
 
 
 /***/ })

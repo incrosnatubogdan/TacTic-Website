@@ -41,7 +41,7 @@ body {
   max-width: 300px;
   min-width: 200px;
 }
-.container-service:first-child {
+.container-service.show {
   display: block;
 }
 .container-service h3 {
@@ -54,8 +54,7 @@ body {
 
 img.menu_toggle {
   position: fixed;
-  width: 10%;
-  max-width: 40px;
+  width: 43px;
   top: 5%;
   left: 80vw;
   cursor: pointer;
@@ -89,6 +88,13 @@ section {
   width: 100vw;
   height: 100vh;
   position: relative;
+}
+section.services-all {
+  display: none;
+}
+section.services-all.show {
+  display: block !important;
+  padding-top: 20vh;
 }
 section .lg-title {
   font-size: 7vh;
@@ -210,7 +216,7 @@ section.bottom .show_hidden img.down {
   display: block;
   flex-direction: column;
   width: 40%;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 .contact-form input,
 .contact-form textarea {
@@ -249,7 +255,7 @@ section.bottom .show_hidden img.down {
 
 nav.desktop_menu {
   position: fixed;
-  right: 0;
+  right: 10vw;
   width: 85vh;
   display: flex;
   align-items: center;
@@ -269,11 +275,18 @@ nav.desktop_menu a:hover {
   border-bottom: 3px solid #F01267;
   color: #F01267;
 }
+nav.desktop_menu a.white {
+  color: white;
+  border-bottom: 3px solid white;
+}
 nav.desktop_menu .languages {
   position: absolute;
   top: 0;
   right: 0;
   cursor: pointer;
+}
+nav.desktop_menu .languages.white {
+  color: white;
 }
 nav.desktop_menu .languages span:hover {
   border-bottom: 3px solid #F01267;
@@ -303,6 +316,16 @@ nav.mobile_menu .top_menu {
   left: 11%;
 }
 
+.container-underline {
+  width: 50%;
+  margin-left: 10%;
+}
+.container-underline h3 {
+  font-size: 50px;
+  margin: 0;
+  border-bottom: 2px solid #F01267;
+  width: 60%;
+}
 img.logo {
   position: fixed;
   width: 10%;
@@ -369,7 +392,7 @@ li {
   position: absolute;
   font-size: 12px;
   margin: 0;
-  width: 200px;
+  width: 15vw;
   text-align: left;
   right: 0px;
   top: 50%;
@@ -421,6 +444,12 @@ li {
 
 [type=checkbox] {
   display: none;
+}
+
+img.what_we {
+  width: 40%;
+  display: block;
+  margin-left: 50%;
 }
 
 .check-label {
