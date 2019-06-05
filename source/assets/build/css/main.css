@@ -104,8 +104,6 @@ section .lg-title {
   height: 100%;
   width: 60%;
   margin: 0;
-  -webkit-text-decoration: underline #F01267;
-          text-decoration: underline #F01267;
 }
 section.home {
   height: calc(100vh - 40px);
@@ -896,9 +894,9 @@ img.what_we {
 .wrapper .top > img {
   height: 100%;
 }
-.wrapper .bottom h2,
-.wrapper .middle h2,
-.wrapper .top h2 {
+.wrapper .bottom h3,
+.wrapper .middle h3,
+.wrapper .top h3 {
   position: absolute;
   right: 50px;
 }
@@ -1248,43 +1246,6 @@ section.bottom .services {
   -webkit-animation: MoveDownUp 3s infinite alternate;
           animation: MoveDownUp 3s infinite alternate;
   bottom: 0;
-}
-
-.main {
-  font-family: Arial;
-  width: 500px;
-  display: block;
-  margin: 0 auto;
-}
-
-h3 {
-  background: #fff;
-  color: #3498db;
-  font-size: 36px;
-  line-height: 100px;
-  margin: 10px;
-  padding: 2%;
-  position: relative;
-  text-align: center;
-}
-
-.action {
-  display: block;
-  margin: 100px auto;
-  width: 100%;
-  text-align: center;
-}
-
-.action a {
-  display: inline-block;
-  padding: 5px 10px;
-  background: #f30;
-  color: #fff;
-  text-decoration: none;
-}
-
-.action a:hover {
-  background: #000;
 }
 
 @-webkit-keyframes MoveUpDown {
