@@ -2,7 +2,9 @@ function test() {
     console.log(123)
 }
 
-function setCookie(name, value, days) {
+jQuery(function(e){console.log(124);e.fn.hScroll=function(l){l=l||120,e(this).bind("DOMMouseScroll mousewheel",function(t){var i=t.originalEvent,n=i.detail?i.detail*-l:i.wheelDelta,o=e(this).scrollLeft();o+=n>0?-l:l,e(this).scrollLeft(o),t.preventDefault()})}});
+
+function setCookie(name,value,days) {
     var expires = "";
     if (days) {
         var date = new Date();
@@ -93,6 +95,8 @@ $(document).ready(function () {
         }, 2000);
     }
 
+    $('section.bottom.show .services-category').hScroll(100);
+    
     jQuery(document).on("click", '.pre_loader button.next', function (event) {
         removeLoader();
     });
@@ -110,7 +114,6 @@ $(document).ready(function () {
 
     jQuery(document).on("click", '.languages span.lang', function (event) {
         var newLang = jQuery(this).attr("data-lang");
-        // console.log(oldLang)
         if (oldLang != newLang) {
             $('*[data-' + newLang + ']').each(function () {
                 var newText = jQuery(this).attr("data-" + newLang);
@@ -120,7 +123,6 @@ $(document).ready(function () {
                 console.log(newText)
             });
             oldLang = newLang;
-            // console.log(oldLang)
             jQuery("nav.mobile_menu").removeClass("animate");
         }
 
@@ -167,32 +169,24 @@ $(document).ready(function () {
         }
     });
 
-    $(".services").scroll(function () {
-        var totalWidth = $(this).width();
-        var scrollPos = $(this).scrollLeft();
-        var percentScroll = scrollPos / totalWidth;
-        if (percentScroll > 0.2 && percentScroll < 0.6) {
-            $(this).animate({
-                scrollLeft: totalWidth
-            }, 500);
-            console.log(percentScroll + "/1");
-        } else if (percentScroll > 1.4 && percentScroll < 1.8) {
-            $(this).animate({
-                scrollLeft: totalWidth * 2
-            }, 500);
-            console.log(percentScroll + "/2");
-        } else if (percentScroll > 1.81 && percentScroll < 2) {
-            $(this).animate({
-                scrollLeft: totalWidth
-            }, 500);
-            console.log(percentScroll + "/3");
-        } else if (percentScroll < 1.4 && percentScroll > 1.2) {
-            $(this).animate({
-                scrollLeft: 0
-            }, 500);
-            console.log(percentScroll + "/4");
-        }
-    });
+    // $(".services").scroll(function() {
+    //     var totalWidth = $(this).width();
+    //     var scrollPos = $(this).scrollLeft();
+    //     var percentScroll = scrollPos / totalWidth;
+    //     if (percentScroll > 0.2 && percentScroll < 0.6) {
+    //         $(this).animate({scrollLeft: totalWidth}, 500);
+    //         console.log(percentScroll +"/1");
+    //     } else if(percentScroll > 1.4  && percentScroll < 1.8) {
+    //         $(this).animate({scrollLeft: totalWidth*2}, 500);
+    //         console.log(percentScroll +"/2");
+    //     } else if(percentScroll > 1.81  && percentScroll < 2) {
+    //         $(this).animate({scrollLeft: totalWidth}, 500);
+    //         console.log(percentScroll +"/3");
+    //     } else if(percentScroll < 1.4  && percentScroll > 1.2) {
+    //         $(this).animate({scrollLeft: 0}, 500);
+    //         console.log(percentScroll +"/4");
+    //     }
+    // });
 
     jQuery(document).on("click", ".desktop_menu > a", function (event) {
         var showSection = jQuery(this).attr("class");
@@ -204,27 +198,21 @@ $(document).ready(function () {
         jQuery("section." + showSection).addClass("show");
     });
 
-    $(".services").scroll(function () {
-        var totalWidth = $(this).width();
-        var scrollPos = $(this).scrollLeft();
-        var percentScroll = scrollPos / totalWidth;
-        if (percentScroll > 0.2 && percentScroll < 0.6) {
-            $(this).animate({
-                scrollLeft: totalWidth
-            }, 500);
-            console.log(percentScroll + "/1");
-        } else if (percentScroll > 1.4 && percentScroll < 1.8) {
-            $(this).animate({
-                scrollLeft: totalWidth * 2
-            }, 500);
-            console.log(percentScroll + "/2");
-        } else if (percentScroll > 1.81 && percentScroll < 2) {
-            $(this).animate({
-                scrollLeft: totalWidth
-            }, 500);
-            console.log(percentScroll + "/3");
-        }
-    });
+    // $(".services").scroll(function() {
+    //     var totalWidth = $(this).width();
+    //     var scrollPos = $(this).scrollLeft();
+    //     var percentScroll = scrollPos / totalWidth;
+    //     if (percentScroll > 0.2 && percentScroll < 0.6) {
+    //         $(this).animate({scrollLeft: totalWidth}, 500);
+    //         console.log(percentScroll +"/1");
+    //     } else if(percentScroll > 1.4  && percentScroll < 1.8) {
+    //         $(this).animate({scrollLeft: totalWidth*2}, 500);
+    //         console.log(percentScroll +"/2");
+    //     } else if(percentScroll > 1.81  && percentScroll < 2) {
+    //         $(this).animate({scrollLeft: totalWidth}, 500);
+    //         console.log(percentScroll +"/3");
+    //     }
+    // });
 
     jQuery(document).on("click", '#mytoggle', function (event) {
         if ($(this).is(":checked")) {
