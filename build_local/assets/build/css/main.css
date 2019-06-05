@@ -105,10 +105,10 @@ section .lg-title {
   width: 60%;
   margin: 0;
 }
-section.top {
+section.home {
   height: calc(100vh - 40px);
 }
-section.top.show {
+section.home.show {
   display: block !important;
   -webkit-animation: slide-in-top 1s;
   animation: slide-in-top 1s;
@@ -825,20 +825,161 @@ img.what_we {
 /* 
 
 
-body {
-  min-height: 100vh;
-  font-family: 'Mukta Malar', Arial;
-  line-height: 22px;
-  font-size: 16px;
-  color: #ADAFB6;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+  body {
+    min-height: 100vh;
+    font-family: 'Mukta Malar', Arial;
+    line-height: 22px;
+    font-size: 16px;
+    color: #ADAFB6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
 .switch_container .switch {
   display: table;
   margin: 12px auto;
   min-width: 118px;
+}
+
+/* You can remove this page div in your website */
+#page {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: #eee;
+}
+
+/* Our normalize css */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.wrapper {
+  width: 690px;
+  height: 600px;
+  max-height: 100vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.wrapper .top {
+  width: 125px;
+}
+.wrapper .bottom,
+.wrapper .middle,
+.wrapper .top {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  color: #4D4D4D;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.wrapper .bottom > img,
+.wrapper .middle > img,
+.wrapper .top > img {
+  height: 100%;
+}
+.wrapper .bottom h2,
+.wrapper .middle h2,
+.wrapper .top h2 {
+  position: absolute;
+  right: 50px;
+}
+
+.scroller {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: 0.9;
+  transition: opacity 0.12s ease-in-out;
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: 3.5px 0px 7px rgba(100, 100, 100, 0.2);
+}
+
+.scroller-middle {
+  margin-top: 25px;
+}
+
+.scroller-top {
+  margin-top: -25px;
+}
+
+.scroller:hover {
+  opacity: 1;
+}
+
+.scrolling {
+  pointer-events: none;
+  opacity: 1;
+}
+
+.scroller__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  padding: 7px;
+}
+
+.scroller:before,
+.scroller:after {
+  content: " ";
+  display: block;
+  width: 7px;
+  height: 9999px;
+  position: absolute;
+  left: 50%;
+  margin-left: -3.5px;
+  z-index: 30;
+  transition: 0.1s;
+  box-shadow: 3.5px 0px 7px rgba(100, 100, 100, 0.2);
+}
+
+.scroller:before {
+  top: 49px;
+}
+
+.scroller:after {
+  bottom: 49px;
+}
+
+.scroller-middle > .scroller__thumb {
+  border: 5px solid #FFCCBC;
+}
+
+.scroller-middle:before,
+.scroller-middle:after {
+  background: #FFCCBC;
+}
+
+.scroller-top > .scroller__thumb {
+  border: 5px solid #FFAB91;
+}
+
+.scroller-top:before,
+.scroller-top:after {
+  background: #FFAB91;
 }
 
 .animating {

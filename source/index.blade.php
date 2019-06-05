@@ -37,7 +37,7 @@
   </div>
 </nav>
 <nav class="desktop_menu">
-  <a class="top">Home</a>
+  <a class="home">Home</a>
   <a class="services-all">What we do</a>
   <a class="contact">Let's talk</a>
   <div class="languages">
@@ -45,7 +45,7 @@
     <span data-lang="en" class="lang">EN</span>
   </div>
 </nav>
-<section class="top">
+<section class="home">
   <div class="ball_container">
     <div class="animContainer">
       <div class="line"></div>
@@ -118,7 +118,33 @@
     <p>Mauris varius interdum sapien non auctor. Curabitur commodo sodales mauris, eu pellentesque elit aliquam et.
       Mauris tristique augue ac magna maximus interdum. Nunc in risus ut mauris dapibus pharetra. Nam consequat, dolor
       vitae</p>
-    <div class="services">
+      <div class="wrapper">
+        <div class="bottom">
+          <h2>Ceva text aici</h2>
+          <p> Lorem Ipsum div 1</p>
+        </div>
+        <div class="middle">
+          <h2>Ceva text aici</h2>
+          <p> Lorem Ipsum div 1</p>
+        </div>
+        <div class="top">
+          <h2>Ceva text aici</h2>
+          <p> Lorem Ipsum div 1</p>
+        </div>
+        <div class="scroller scroller-middle">
+          <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+            viewBox="0 0 100 100">
+            <polygon points="0 50 37 68 37 32 0 50" style="fill:#FFCCBC" />
+            <polygon points="100 50 64 32 64 68 100 50" style="fill:#FFCCBC" /></svg>
+        </div>
+        <div class="scroller scroller-top">
+          <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100"
+            viewBox="0 0 100 100">
+            <polygon points="0 50 37 68 37 32 0 50" style="fill:#FFAB91" />
+            <polygon points="100 50 64 32 64 68 100 50" style="fill:#FFAB91" /></svg>
+        </div>
+      </div>
+    <!-- <div class="services">
       <div class="services-category">
         <span class="services-category--title">marketing</span>
         <ul class="services-category--list">
@@ -152,7 +178,7 @@
           <li class="services-category--element" data-en="Black magic, son">Da pe traducere sa vezi magie</li>
         </ul>
       </div>
-    </div>
+    </div> -->
 </section>
 <section class="services-all">
   <div class="container-underline">
@@ -168,7 +194,7 @@
       culpa numquam ratione recusandae facilis voluptate placeat, ipsum sunt itaque rerum rem quibusdam. Magnam, ut
       laudantium!</p>
   </div>
-  <div class="container-service show" >
+  <div class="container-service show">
     <h3>Web Design</h3>
     <div class="round web_design">
       <input type="checkbox" data-price="280" id="checkbox" />

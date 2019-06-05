@@ -2,27 +2,29 @@ function test() {
     console.log(123)
 }
 
-function setCookie(name,value,days) {
+function setCookie(name, value, days) {
     var expires = "";
     if (days) {
         var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         expires = "; expires=" + date.toUTCString();
     }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
+
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) {
+    for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
 }
-function eraseCookie(name) {   
-    document.cookie = name+'=; Max-Age=-99999999;';  
+
+function eraseCookie(name) {
+    document.cookie = name + '=; Max-Age=-99999999;';
 }
 
 jQuery.fn.scrollCenter = function (elem, speed) {
@@ -46,7 +48,7 @@ jQuery.fn.scrollCenterORI = function (elem, speed) {
     return this;
 };
 
-function showHideButton () {
+function showHideButton() {
     jQuery(".pre_loader button.next").show();
 }
 
@@ -59,26 +61,26 @@ function bodyAnimation() {
         setTimeout(function (event) {
             $("body").addClass("light_theme_bg");
             $("body").removeClass("dark_theme_bg");
-        }, 2000); 
-        $(".switch_img").attr("src","assets/images/toggle/dark_theme.svg");
+        }, 2000);
+        $(".switch_img").attr("src", "assets/images/toggle/dark_theme.svg");
     } else {
         setTimeout(function (event) {
             $("body").addClass("dark_theme_bg");
             $("body").removeClass("light_theme_bg");
-        }, 2000); 
+        }, 2000);
         $("nav").removeClass("light_theme_bg");
         $("nav").addClass("dark_theme_bg");
-        $(".switch_img").attr("src","assets/images/toggle/white_theme.svg")
+        $(".switch_img").attr("src", "assets/images/toggle/white_theme.svg")
     }
     setTimeout(function (event) {
         $("body").removeClass("animating");
         $("body").removeClass("slide-in-right");
-    }, 1000);   
+    }, 1000);
 }
 
 function removeLoader() {
     jQuery(".pre_loader").remove();
-    setCookie("loader","true","2");
+    setCookie("loader", "true", "2");
 }
 
 $(document).ready(function () {
@@ -88,9 +90,9 @@ $(document).ready(function () {
     } else {
         setTimeout(function (event) {
             showHideButton();
-        },2000);
+        }, 2000);
     }
-    
+
     jQuery(document).on("click", '.pre_loader button.next', function (event) {
         removeLoader();
     });
@@ -110,10 +112,10 @@ $(document).ready(function () {
         var newLang = jQuery(this).attr("data-lang");
         // console.log(oldLang)
         if (oldLang != newLang) {
-            $('*[data-'+newLang+']').each(function() {
-                var newText = jQuery(this).attr("data-"+newLang);
+            $('*[data-' + newLang + ']').each(function () {
+                var newText = jQuery(this).attr("data-" + newLang);
                 var oldText = jQuery(this).text();
-                $(this).attr("data-"+oldLang, oldText);
+                $(this).attr("data-" + oldLang, oldText);
                 $(this).text(newText);
                 console.log(newText)
             });
@@ -121,8 +123,8 @@ $(document).ready(function () {
             // console.log(oldLang)
             jQuery("nav.mobile_menu").removeClass("animate");
         }
-        
-        
+
+
     });
 
     jQuery(document).on("click", 'h1', function (event) {
@@ -133,23 +135,28 @@ $(document).ready(function () {
         }
     });
 
-    jQuery(document).on("click",".anim--holder-img", function(event){
-        if($("body").hasClass("notransition")) {
-            $(this).attr("src","assets/images/anim/stop.svg");
+    jQuery(document).on("click", ".anim--holder-img", function (event) {
+        if ($("body").hasClass("notransition")) {
+            $(this).attr("src", "assets/images/anim/stop.svg");
         } else {
-            $(this).attr("src","assets/images/anim/play.svg");
+            $(this).attr("src", "assets/images/anim/play.svg");
         }
         $('body').toggleClass('notransition');
     });
 
-    jQuery(document).on("click",".show_hidden img", function(event){
-        if($(this).hasClass("up")) {
+    jQuery(document).on("click", ".show_hidden img", function (event) {
+        if ($(this).hasClass("up")) {
             $(this).removeClass("up");
             $(this).addClass("down");
             $("nav.desktop_menu a").addClass("white");
             $("nav.desktop_menu .languages").addClass("white");
             $("section.bottom").removeClass("hide");
             $("section.bottom").addClass("show");
+            active = "middle";
+            scrollIt(460);
+            active = "top";
+            scrollIt(230);
+            active = false;
         } else {
             $(this).removeClass("down");
             $(this).addClass("up");
@@ -160,55 +167,69 @@ $(document).ready(function () {
         }
     });
 
-    $(".services").scroll(function() {
+    $(".services").scroll(function () {
         var totalWidth = $(this).width();
         var scrollPos = $(this).scrollLeft();
         var percentScroll = scrollPos / totalWidth;
         if (percentScroll > 0.2 && percentScroll < 0.6) {
-            $(this).animate({scrollLeft: totalWidth}, 500);
-            console.log(percentScroll +"/1");
-        } else if(percentScroll > 1.4  && percentScroll < 1.8) {
-            $(this).animate({scrollLeft: totalWidth*2}, 500);
-            console.log(percentScroll +"/2");
-        } else if(percentScroll > 1.81  && percentScroll < 2) {
-            $(this).animate({scrollLeft: totalWidth}, 500);
-            console.log(percentScroll +"/3");
-        } else if(percentScroll < 1.4  && percentScroll > 1.2) {
-            $(this).animate({scrollLeft: 0}, 500);
-            console.log(percentScroll +"/4");
+            $(this).animate({
+                scrollLeft: totalWidth
+            }, 500);
+            console.log(percentScroll + "/1");
+        } else if (percentScroll > 1.4 && percentScroll < 1.8) {
+            $(this).animate({
+                scrollLeft: totalWidth * 2
+            }, 500);
+            console.log(percentScroll + "/2");
+        } else if (percentScroll > 1.81 && percentScroll < 2) {
+            $(this).animate({
+                scrollLeft: totalWidth
+            }, 500);
+            console.log(percentScroll + "/3");
+        } else if (percentScroll < 1.4 && percentScroll > 1.2) {
+            $(this).animate({
+                scrollLeft: 0
+            }, 500);
+            console.log(percentScroll + "/4");
         }
     });
 
-    jQuery(document).on("click", ".desktop_menu > a", function(event) {
+    jQuery(document).on("click", ".desktop_menu > a", function (event) {
         var showSection = jQuery(this).attr("class");
         var sectionLength = jQuery("section").length;
-        for(var i=0;i < sectionLength;i++) {
+        for (var i = 0; i < sectionLength; i++) {
             jQuery("section").hide();
             jQuery("section").removeClass("show");
         }
         jQuery("section." + showSection).addClass("show");
     });
 
-    $(".services").scroll(function() {
+    $(".services").scroll(function () {
         var totalWidth = $(this).width();
         var scrollPos = $(this).scrollLeft();
         var percentScroll = scrollPos / totalWidth;
         if (percentScroll > 0.2 && percentScroll < 0.6) {
-            $(this).animate({scrollLeft: totalWidth}, 500);
-            console.log(percentScroll +"/1");
-        } else if(percentScroll > 1.4  && percentScroll < 1.8) {
-            $(this).animate({scrollLeft: totalWidth*2}, 500);
-            console.log(percentScroll +"/2");
-        } else if(percentScroll > 1.81  && percentScroll < 2) {
-            $(this).animate({scrollLeft: totalWidth}, 500);
-            console.log(percentScroll +"/3");
+            $(this).animate({
+                scrollLeft: totalWidth
+            }, 500);
+            console.log(percentScroll + "/1");
+        } else if (percentScroll > 1.4 && percentScroll < 1.8) {
+            $(this).animate({
+                scrollLeft: totalWidth * 2
+            }, 500);
+            console.log(percentScroll + "/2");
+        } else if (percentScroll > 1.81 && percentScroll < 2) {
+            $(this).animate({
+                scrollLeft: totalWidth
+            }, 500);
+            console.log(percentScroll + "/3");
         }
     });
 
     jQuery(document).on("click", '#mytoggle', function (event) {
         if ($(this).is(":checked")) {
             // $(this).addClass("checked")
-            
+
             $(".dark_theme_c").each(function () {
                 $(this).addClass("light_theme_c");
                 $(this).removeClass("dark_theme_c");
@@ -223,12 +244,12 @@ $(document).ready(function () {
         }
     });
 
-    var servicesArray = ["marketing", "design" , "web development"];
+    var servicesArray = ["marketing", "design", "web development"];
     var i = 0;
     var n = 0;
 
     jQuery(document).on("click", '.services_switcher img', function (event) {
-        if(!jQuery(this).hasClass("next_service")) {
+        if (!jQuery(this).hasClass("next_service")) {
             $("#left_text").text(servicesArray[i]).fadeIn();
             i++;
             if (i >= 3) {
@@ -236,13 +257,13 @@ $(document).ready(function () {
             }
             $("#right_text").text(servicesArray[i]).fadeIn();
         } else {
-            $( ".container-service:eq("+n+")" ).hide();
+            $(".container-service:eq(" + n + ")").hide();
             n++;
             if (n >= 3) {
                 n = 0;
             }
-            $( ".container-service:eq("+n+")" ).show();
-            
+            $(".container-service:eq(" + n + ")").show();
+
         }
     });
 
@@ -303,5 +324,95 @@ $(document).ready(function () {
             });
             $(".final_price").text(newPrice + "€");
         }
+    });
+
+    let active = false;
+    let scrollerMiddle = document.querySelector('.scroller-middle');
+    let scrollerTop = document.querySelector('.scroller-top');
+
+    scrollerMiddle.addEventListener('mousedown', function () {
+        active = "middle";
+        scrollerMiddle.classList.add('scrolling');
+    });
+    document.body.addEventListener('mouseup', function () {
+        active = false;
+        scrollerMiddle.classList.remove('scrolling');
+    });
+    document.body.addEventListener('mouseleave', function () {
+        active = false;
+        scrollerMiddle.classList.remove('scrolling');
+    });
+    
+    scrollerTop.addEventListener('mousedown', function () {
+        active = "top";
+        scrollerTop.classList.add('scrolling');
+    });
+    document.body.addEventListener('mouseup', function () {
+        active = false;
+        scrollerTop.classList.remove('scrolling');
+    });
+    document.body.addEventListener('mouseleave', function () {
+        active = false;
+        scrollerTop.classList.remove('scrolling');
+    });
+
+    document.body.addEventListener('mousemove', function (e) {
+        if (!active) return;
+        let x = e.pageX;
+        x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+        scrollIt(x);
+    });
+    function scrollIt(x) {
+        let transform = Math.max(0, (Math.min(x, document.querySelector('.wrapper').offsetWidth)));
+        if (active === "middle") {
+            document.querySelector('.middle').style.width = transform + "px";
+            scrollerMiddle.style.left = transform - 25 + "px";
+            if (scrollerTop.getBoundingClientRect().left > scrollerMiddle.getBoundingClientRect().left - 5) {
+                document.querySelector('.top').style.width = transform - 5 + "px";
+                scrollerTop.style.left = transform - 30 + "px";
+            }
+        }
+        if (active === "top") {
+            document.querySelector('.top').style.width = transform + "px";
+            scrollerTop.style.left = transform - 25 + "px";
+            if (scrollerTop.getBoundingClientRect().left > scrollerMiddle.getBoundingClientRect().left - 5) {
+                document.querySelector('.middle').style.width = transform + 5 + "px";
+                scrollerMiddle.style.left = transform - 20 + "px";
+            }
+        }
+    }
+
+    scrollerMiddle.addEventListener('touchstart', function () {
+        active = "middle";
+        scrollerMiddle.classList.add('scrolling');
+    });
+    document.body.addEventListener('touchend', function () {
+        active = false;
+        scrollerMiddle.classList.remove('scrolling');
+    });
+    document.body.addEventListener('touchcancel', function () {
+        active = false;
+        scrollerMiddle.classList.remove('scrolling');
+    });
+
+    scrollerTop.addEventListener('touchstart', function () {
+        active = "top";
+        scrollerTop.classList.add('scrolling');
+    });
+    document.body.addEventListener('touchend', function () {
+        active = false;
+        scrollerTop.classList.remove('scrolling');
+    });
+    document.body.addEventListener('touchcancel', function () {
+        active = false;
+        scrollerTop.classList.remove('scrolling');
+    });
+
+    document.querySelector('.wrapper').addEventListener('touchmove', function (e) {
+        if (!active) return;
+        e.preventDefault();
+        let x = e.touches[0].pageX;
+        x -= document.querySelector('.wrapper').getBoundingClientRect().left;
+        scrollIt(x);
     });
 });
