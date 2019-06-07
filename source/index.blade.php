@@ -6,7 +6,7 @@
   <div class="loader posAbs"></div>
   <div class="firstText"></div>
   <img class="pre_loader-logo" src="assets/images/logo.svg">
-  <div class="container">
+  <div class="pulse-container">
     <button class="pulseButton next">
       <img class="next" src="assets/images/switcher/rightArrow.svg">
     </button>
@@ -121,15 +121,15 @@
       <div class="wrapper">
         <div class="bottom">
           <h2>Ceva text aici</h2>
-          <p> Lorem Ipsum div 1</p>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo consectetur, soluta excepturi, quisquam maiores a eius animi iste voluptatum, harum quos et veniam minus atque assumenda nisi impedit temporibus dolore.</p>
         </div>
         <div class="middle">
           <h2>Ceva text aici</h2>
-          <p> Lorem Ipsum div 1</p>
+          <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, dignissimos soluta, enim incidunt voluptatum dolore nisi tenetur nihil, aperiam doloribus atque accusamus consequuntur ullam earum aspernatur eveniet molestias at repudiandae?</p>
         </div>
         <div class="top">
           <h2>Ceva text aici</h2>
-          <p> Lorem Ipsum div 1</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit in excepturi dolorum accusantium doloribus dolores. Iste, distinctio atque id delectus inventore natus rerum eligendi incidunt neque, amet tempore. Deserunt, voluptas.</p>
         </div>
         <div class="scroller scroller-middle">
           <svg class="scroller__thumb" xmlns="http://www.w3.org/2000/svg" width="100" height="100"

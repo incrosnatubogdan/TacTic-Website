@@ -2,7 +2,7 @@ function test() {
     console.log(123)
 }
 
-jQuery(function(e){console.log(124);e.fn.hScroll=function(l){l=l||120,e(this).bind("DOMMouseScroll mousewheel",function(t){var i=t.originalEvent,n=i.detail?i.detail*-l:i.wheelDelta,o=e(this).scrollLeft();o+=n>0?-l:l,e(this).scrollLeft(o),t.preventDefault()})}});
+jQuery(function(e){e.fn.hScroll=function(l){l=l||120,e(this).bind("DOMMouseScroll mousewheel",function(t){var i=t.originalEvent,n=i.detail?i.detail*-l:i.wheelDelta,o=e(this).scrollLeft();o+=n>0?-l:l,e(this).scrollLeft(o),t.preventDefault()})}});
 
 function setCookie(name,value,days) {
     var expires = "";
@@ -12,6 +12,25 @@ function setCookie(name,value,days) {
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function checkWidth() {
+    var wrapperWidth = jQuery(".wrapper").width();
+    var univUnit = wrapperWidth / 3;
+    if (jQuery(".middle").width() > univUnit * 2 || jQuery(".top").width() < univUnit) {
+        jQuery(".wrapper p").hide();
+        jQuery(".middle > p").show();
+    }
+
+    if (jQuery(".top").width() > univUnit) {
+        jQuery(".wrapper p").hide();
+        jQuery(".top > p").show();
+    }
+
+    if (jQuery(".top").width() < univUnit && jQuery(".middle").width() < univUnit * 1.5) {
+        jQuery(".wrapper p").hide();
+        jQuery(".bottom > p").show();
+    }
 }
 
 function getCookie(name) {
@@ -92,6 +111,7 @@ $(document).ready(function () {
     } else {
         setTimeout(function (event) {
             showHideButton();
+            console.log(123)
         }, 2000);
     }
 
@@ -120,7 +140,6 @@ $(document).ready(function () {
                 var oldText = jQuery(this).text();
                 $(this).attr("data-" + oldLang, oldText);
                 $(this).text(newText);
-                console.log(newText)
             });
             oldLang = newLang;
             jQuery("nav.mobile_menu").removeClass("animate");
@@ -154,10 +173,13 @@ $(document).ready(function () {
             $("nav.desktop_menu .languages").addClass("white");
             $("section.bottom").removeClass("hide");
             $("section.bottom").addClass("show");
+            var wrapperWidth = jQuery(".wrapper").width();
+            var univUnit = wrapperWidth / 3;
+            console.log(wrapperWidth)
             active = "middle";
-            scrollIt(460);
+            scrollIt(univUnit * 2);
             active = "top";
-            scrollIt(230);
+            scrollIt(univUnit);
             active = false;
         } else {
             $(this).removeClass("down");
@@ -352,6 +374,7 @@ $(document).ready(function () {
     });
     function scrollIt(x) {
         let transform = Math.max(0, (Math.min(x, document.querySelector('.wrapper').offsetWidth)));
+        checkWidth();
         if (active === "middle") {
             document.querySelector('.middle').style.width = transform + "px";
             scrollerMiddle.style.left = transform - 25 + "px";

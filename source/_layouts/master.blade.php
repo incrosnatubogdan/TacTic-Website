@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ mix('css/main.css', 'assets/build') }}">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="http://localhost/tactic-website/assets/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="{{ mix('js/main.js', 'assets/build') }}"></script>
     <style>
         .pre_loader {
@@ -139,7 +139,7 @@
 
         /* css for button */
 
-        .container {
+        .pulse-container {
             margin: 0 auto 0;
             position: absolute;
             top: 45%;

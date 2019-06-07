@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i&display=swap');
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -1075,8 +1075,8 @@ img.what_we {
 
 
 .wrapper {
-  width: 690px;
-  height: 600px;
+  width: 80%;
+  height: 300px;
   max-height: 100vh;
   position: absolute;
   left: 50%;
@@ -1096,20 +1096,24 @@ img.what_we {
     height: 100%;
     background-repeat: no-repeat;
     background-color: white;
-    color: #4D4D4D;
+    color: #99A3BA;
     position: absolute;
     top: 0;
     left: 0;
     pointer-events: none;
     overflow: hidden;
 
-    &>img {
-      height: 100%;
-    }
-
-    h3 {
+    h2 {
       position: absolute;
       right: 50px;
+    }
+
+    p {
+      position: absolute;
+      right: 2vh;
+      width: 90%;
+      top: 40px;
+      display: none;
     }
   }
 }

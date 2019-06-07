@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -98,8 +98,6 @@ function test() {
 }
 
 jQuery(function (e) {
-  console.log(124);
-
   e.fn.hScroll = function (l) {
     l = l || 120, e(this).bind("DOMMouseScroll mousewheel", function (t) {
       var i = t.originalEvent,
@@ -120,6 +118,26 @@ function setCookie(name, value, days) {
   }
 
   document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function checkWidth() {
+  var wrapperWidth = jQuery(".wrapper").width();
+  var univUnit = wrapperWidth / 3;
+
+  if (jQuery(".middle").width() > univUnit * 2 || jQuery(".top").width() < univUnit) {
+    jQuery(".wrapper p").hide();
+    jQuery(".middle > p").show();
+  }
+
+  if (jQuery(".top").width() > univUnit) {
+    jQuery(".wrapper p").hide();
+    jQuery(".top > p").show();
+  }
+
+  if (jQuery(".top").width() < univUnit && jQuery(".middle").width() < univUnit * 1.5) {
+    jQuery(".wrapper p").hide();
+    jQuery(".bottom > p").show();
+  }
 }
 
 function getCookie(name) {
@@ -208,6 +226,7 @@ $(document).ready(function () {
   } else {
     setTimeout(function (event) {
       showHideButton();
+      console.log(123);
     }, 2000);
   }
 
@@ -234,7 +253,6 @@ $(document).ready(function () {
         var oldText = jQuery(this).text();
         $(this).attr("data-" + oldLang, oldText);
         $(this).text(newText);
-        console.log(newText);
       });
       oldLang = newLang;
       jQuery("nav.mobile_menu").removeClass("animate");
@@ -264,10 +282,13 @@ $(document).ready(function () {
       $("nav.desktop_menu .languages").addClass("white");
       $("section.bottom").removeClass("hide");
       $("section.bottom").addClass("show");
+      var wrapperWidth = jQuery(".wrapper").width();
+      var univUnit = wrapperWidth / 3;
+      console.log(wrapperWidth);
       active = "middle";
-      scrollIt(460);
+      scrollIt(univUnit * 2);
       active = "top";
-      scrollIt(230);
+      scrollIt(univUnit);
       active = false;
     } else {
       $(this).removeClass("down");
@@ -455,6 +476,7 @@ $(document).ready(function () {
 
   function scrollIt(x) {
     var transform = Math.max(0, Math.min(x, document.querySelector('.wrapper').offsetWidth));
+    checkWidth();
 
     if (active === "middle") {
       document.querySelector('.middle').style.width = transform + "px";
@@ -512,26 +534,14 @@ $(document).ready(function () {
 
 /***/ }),
 
-/***/ "./source/_assets/sass/main.scss":
-/*!***************************************!*\
-  !*** ./source/_assets/sass/main.scss ***!
-  \***************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ 0:
-/*!*************************************************************************!*\
-  !*** multi ./source/_assets/js/main.js ./source/_assets/sass/main.scss ***!
-  \*************************************************************************/
+/***/ 1:
+/*!*****************************************!*\
+  !*** multi ./source/_assets/js/main.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Server-1\htdocs\TacTic-Website\source\_assets\js\main.js */"./source/_assets/js/main.js");
-module.exports = __webpack_require__(/*! C:\Server-1\htdocs\TacTic-Website\source\_assets\sass\main.scss */"./source/_assets/sass/main.scss");
+module.exports = __webpack_require__(/*! C:\Server-1\htdocs\TacTic-Website\source\_assets\js\main.js */"./source/_assets/js/main.js");
 
 
 /***/ })
